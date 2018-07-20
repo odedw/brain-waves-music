@@ -13,6 +13,12 @@ function toggle() {
     }
 }
 
+let soundsLoaded = 0;
+function soundLoaded(snd) {
+    soundsLoaded++;
+    if (soundsLoaded == 2) btn.disabled = false;
+}
+
 function volumeChange() {
     const volume = parseInt(slider.value) / 10;
     b.volume(volume);
@@ -20,10 +26,12 @@ function volumeChange() {
 
 var a = new Howl({
     src: [ './assets/loop-a.mp3' ],
-    loop: true
+    loop: true,
+    onload: soundLoaded
 });
 var b = new Howl({
     src: [ './assets/loop-b.mp3' ],
     volume: 0,
-    loop: true
+    loop: true,
+    onload: soundLoaded
 });
