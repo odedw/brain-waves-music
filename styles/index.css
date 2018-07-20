@@ -7,11 +7,12 @@
 #btn {
     margin-right: 10px;
     width: 20%;
-    height: 40px;
+    height: 10vh;
 }
 
 #slider {
     width: 50%;
+    height: 10vh;
 }
 
 html,
