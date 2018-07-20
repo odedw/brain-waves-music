@@ -1,6 +1,7 @@
 let isPlaying = false;
 const btn = document.getElementById('btn');
 const slider = document.getElementById('slider');
+const loading = document.getElementById('loading');
 function toggle() {
     isPlaying = !isPlaying;
     btn.innerText = isPlaying ? 'Stop' : 'Play';
@@ -16,7 +17,10 @@ function toggle() {
 let soundsLoaded = 0;
 function soundLoaded(snd) {
     soundsLoaded++;
-    if (soundsLoaded == 2) btn.disabled = false;
+    if (soundsLoaded == 2) {
+        loading.innerText = '';
+        btn.disabled = false;
+    }
 }
 
 function volumeChange() {
